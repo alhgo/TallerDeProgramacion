@@ -91,7 +91,27 @@
         }
         
 
+        function Sumar(x, y){
+            
+            var resultado = x + y;
+            //console.log(resultado);
+            return resultado;
+        }
         
+        function Multiplicar(x, y){
+            
+            var resultado = x * y;
+            //console.log(resultado);
+            return resultado;
+        }
+        
+        Sumar(20, 50);
+        
+        num1 = Sumar(123,32423 );
+        num2 = Multiplicar(34,23);
+        
+        var resultado = num1 / num2;
+        console.log(resultado);
         
 
         
