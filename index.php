@@ -12,36 +12,57 @@
     
     <script>
 
+        var shield = 100;
+        var lifes = 5;
+        var damage;
+        var msg;
+        var inv = false;
+        var coolDown = 5; //Tiempo en segundos que tarda en quitarse el coolDown
+        var alive = true; 
         
         
         
+        function Saludar(){
+            //msg = "Hola mundo desde una función";
+            console.log(msg);
+        }
         
-        var saludo; 
+        function Impacto()
+        {
+            damage = Math.random() * 5000;
+            damage = Math.floor(damage)/100;
+            shield -= damage; //Este es lo mismo que shield = shield - damage;
+            shield = Math.floor(shield * 100) / 100; //Redondeo el valor de shield a 2 decimales
+            
+            if(shield > 0){
+                msg = "IMPACTO de fuerza " + damage + "!!! Te queda " + shield + " de escudo";
+
+            }
+            else if(shield == 0) {
+                msg = "IMPACTO de fuerza " + damage + "!!! ESTÁS SIN ESCUDO!!!!!!!";
+
+            }
+            else {
+                lifes--;
+                msg = "MUERTE!!!!";
+                
+            }
+            
+            
+            Saludar();
+            
+              
+            
+            
+        }
         
-        var alive = true;
         
-        var x = "13";
-        var y = "2";
-        var resultado = x + y;
-        
-        console.log(resultado);
+        Impacto();
+        Impacto();
+        Impacto();
         
         
-        saludo = "Hola mundo";
-        
-        console.log(saludo);
-        
-        
-        saludo = "Adiós mundo cruel";
-        
-        console.log(saludo);
-        
-        
-        
-        //Esto para más adelante
-        //document.getElementById("saludo").innerHTML = "HOLA MUNDO";
-        
-        
+
         
     
     </script>
