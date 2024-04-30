@@ -29,11 +29,21 @@
             document.getElementById("saludo").innerHTML = msg;
         }
         
+        //Funcion propia para generar numeros aleatorios con 2 decimales
+        function RandomNumber(max = 50)
+        {
+            var resultado;
+            max *=100; //Lo multiplico por 100
+            resultado = Math.random() * max;
+            resultado = Math.floor(resultado)/100; //Lo redondeo y divido para dar 2 decimales
+            //console.log(resultado);
+            return resultado;
+        }
+        
         function Impacto()
         {
 
-            damage = Math.random() * 5000;
-            damage = Math.floor(damage)/100;
+            damage = RandomNumber(25);
             shield -= damage; //Este es lo mismo que shield = shield - damage;
             shield = Math.floor(shield * 100) / 100; //Redondeo el valor de shield a 2 decimales
             
@@ -91,6 +101,7 @@
         }
         
 
+        /*
         function Sumar(x, y){
             
             var resultado = x + y;
@@ -113,7 +124,20 @@
         var resultado = num1 / num2;
         console.log(resultado);
         
-
+        */
+        
+        //----------------BUCLES----------------//
+        //Ejemplo de buble con while
+        var n = 0;
+        while(n < 10){
+            console.log(n);
+            n++;
+        }
+        
+        //Lo mismo pero bien hecho con FOR, en esta ocasión cueta atras, incluyendo el 0
+        for(y = 10; y >= 0 ; y--){
+            console.log(y);
+        }
         
     
     </script>
