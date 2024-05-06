@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript For Dummies</title>
+    
+    <style>
+        h1 span {
+            color: red;
+        }
+    
+    </style>
+</head>
+
+<body>
+    
+    <h1 id="tit">Título</h1>
+    <img onClick="CambiarImagen()" src="img/koala.jpg" alt="koala" width="100%" id="koala">
+    
+    
+    
+    <script>
+    
+        //window.alert("HOLA MUNDO");
+        //Accedo al elemento del DOM con ID "tit" y lo meto en una variable
+        var DOM_title = document.getElementById("tit");
+        //Creo una variable que contendra el contenido de ese elemento
+        var contenido = DOM_title.innerHTML;
+        //Lo mando a consola
+        console.log(contenido);
+        //Ahora cambio el contenido de ese elemento
+        DOM_title.innerHTML = "Nuevo título desde Javascript";
+        
+        //INTERRUPTOR Y DESENCADENADOR DE INTERACTIVIDAD 
+        //Booleana que indica que el interruptor esta encendido        
+        var enecendido = true;
+        
+        //Funcion a la que llamo cada vez que hago click en la imagen        
+        function CambiarImagen()
+        {
+            //Dependiendo de si está encendido o no la cambio
+            if(enecendido == true){
+                document.getElementById("koala").src = "img/koala2.jpg";
+                enecendido = false; //Le digo que está apagado
+            }
+            else{
+                document.getElementById("koala").src = "img/koala.jpg";
+                enecendido = true;
+            }
+            
+            //TRUCO: para cambiar una booleana por la contraria es con el siguiente codigo
+            //enecendido = !enecendido;
+            
+            //Es bueno comprobar que funciona nuestro codigo con mensajes a consola
+            console.log("Se ha cambiado la imagne. El estado del interruptor es: " + enecendido);
+            
+        }
+        
+
+    
+    </script>
+    
+    
+</body>
+</html>
