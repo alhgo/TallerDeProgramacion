@@ -34,10 +34,68 @@
         <button id="btn_img" >Click me</button>
     
     </p>
+    
+    <div id="contenido">
+        
+    </div>
+    
+    <div id="images">
+    
+    
+    
+    
+    </div>
     <img  onClick="CambiarImagen()" src="img/koala.jpg" alt="koala" width="100%" title="Click me" id="koala">
     
     
-    
+    <!--
     <script src="js/functions.js"></script>
+    -->
+    
+    
+    
+    <script>
+        
+        
+        //Creao un párrafo al vuelo
+        var myParr = document.createElement("h4");
+        
+        //Creo un array con cadenas de texto
+        var saludos = [];
+        saludos[0] = "'";
+        saludos[1] = "Hola";
+        saludos[2] = " ";
+        saludos[3] = "Mundo";
+        saludos[4] = "'";
+        
+        //Muestro cuantos elementos tiene el array
+        console.log(saludos.length);
+        
+        //Hago un bucle por los elementos del array
+        for(n = 0; n < saludos.length; n++){
+            //Añado cada elemento a mi parrafo
+            myParr.append(saludos[n])
+            
+            
+        }
+        
+        //Para nota, la forma correcta de mostrar un array es foreach
+        
+        //Añado el parrafo creado e mi DIV
+        document.getElementById("contenido").appendChild(myParr);
+        
+        //Voy a crear 200 imagenes
+        for(n = 0; n < 200; n++){
+            
+            var image = document.createElement("img");
+            image.src = "img/koala.jpg";
+            image.width = 50;
+
+            document.getElementById("images").appendChild(image);
+        }
+        
+    </script>
+    
+    
 </body>
 </html>
